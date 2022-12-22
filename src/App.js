@@ -1,5 +1,4 @@
 import './App.css';
-import { Home } from './components/Home';
 
 function App() {
 	return (
@@ -9,7 +8,6 @@ function App() {
 				Documentación React
 			</a>
 			<hr />
-			<Home />
 		</div>
 	);
 }
