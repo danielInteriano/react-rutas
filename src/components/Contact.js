@@ -6,6 +6,16 @@ export const Contact = () => {
 			<h1>Contactos</h1>
 			<hr />
 			<p>Este es el componente Contact del router</p>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
 		</div>
 	);
 };

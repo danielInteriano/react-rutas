@@ -9,6 +9,16 @@ export const Home = () => {
 			<a href="https://reactrouter.com/en/main/routers/create-browser-router">
 				Documentación React
 			</a>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
 		</div>
 	);
 };

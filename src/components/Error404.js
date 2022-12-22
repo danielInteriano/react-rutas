@@ -8,6 +8,16 @@ const Error404 = () => {
 			<h1>404</h1>
 			<p>Page not found</p>
 			<p>{error.statusText || error.message}</p>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
 		</div>
 	);
 };
