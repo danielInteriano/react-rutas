@@ -4,6 +4,8 @@ import { Contact } from '../components/Contact';
 import Encabezado from '../components/Encabezado';
 import Error404 from '../components/Error404';
 import { Home } from '../components/Home';
+import Producto from '../pages/Producto';
+import Usuario from '../pages/Usuario';
 
 export const Router = createBrowserRouter([
 	{
@@ -22,6 +24,14 @@ export const Router = createBrowserRouter([
 			{
 				path: 'contact',
 				element: <Contact />,
+			},
+			{
+				path: '/usuario/:username',
+				element: <Usuario />,
+			},
+			{
+				path: '/producto',
+				element: <Producto />,
 			},
 		],
 	},

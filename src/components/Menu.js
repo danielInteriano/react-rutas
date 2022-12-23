@@ -22,6 +22,12 @@ const Menu = () => {
 						<NavLink to="contact" className="btn btn-outline-primary me-2">
 							Contacto
 						</NavLink>
+						<NavLink to="/usuario/:username" className="btn btn-outline-primary me-2">
+							Perfil
+						</NavLink>
+						<NavLink to="/producto" className="btn btn-outline-primary me-2">
+							Producto
+						</NavLink>
 					</Nav>
 				</Container>
 			</Navbar>
