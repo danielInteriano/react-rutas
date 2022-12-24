@@ -2,6 +2,9 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, Outlet } from 'react-router-dom';
 
 const TemasReact = () => {
+	let usuario;
+	usuario = false;
+	usuario = true;
 	return (
 		<div>
 			<h1>Temas de React</h1>
@@ -22,7 +25,10 @@ const TemasReact = () => {
 						<Link to="/temasreact/login" className="btn btn-outline-warning me-2">
 							Login
 						</Link>
-						<Link to="/temasreact/dashboard" className="btn btn-outline-warning me-2">
+						<Link
+							to={usuario ? '/temasreact/dashboard' : '/temasreact/login'}
+							className="btn btn-outline-warning me-2"
+						>
 							Dashboard
 						</Link>
 					</Nav>
