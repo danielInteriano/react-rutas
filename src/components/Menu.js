@@ -28,6 +28,12 @@ const Menu = () => {
 						<NavLink to="/producto" className="btn btn-outline-primary me-2">
 							Producto
 						</NavLink>
+						<NavLink to="/redirecciona" className="btn btn-outline-primary me-2">
+							Redirección
+						</NavLink>
+						<NavLink to="/temasreact" className="btn btn-outline-primary me-2">
+							Temas React
+						</NavLink>
 					</Nav>
 				</Container>
 			</Navbar>
