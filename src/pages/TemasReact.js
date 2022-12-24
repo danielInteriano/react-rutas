@@ -8,21 +8,21 @@ const TemasReact = () => {
 			<hr />
 			<Navbar bg="dark" variant="dark" expand="lg">
 				<Container>
-					<Navbar.Brand className="btn btn-outline-primary me-2">Topics</Navbar.Brand>
+					<Navbar.Brand className="btn btn-outline-warning me-2">Topics</Navbar.Brand>
 					<Nav className="me-auto">
-						<Link to="/temasreact" className="btn btn-outline-primary me-2">
+						<Link to="/temasreact" className="btn btn-outline-warning me-2">
 							Props
 						</Link>
-						<Link to="/temasreact/estado" className="btn btn-outline-primary me-2">
+						<Link to="/temasreact/estado" className="btn btn-outline-warning me-2">
 							Estado
 						</Link>
-						<Link to="/temasreact/componentes" className="btn btn-outline-primary me-2">
+						<Link to="/temasreact/componentes" className="btn btn-outline-warning me-2">
 							Componente
 						</Link>
-						<Link to="/temasreact/login" className="btn btn-outline-primary me-2">
+						<Link to="/temasreact/login" className="btn btn-outline-warning me-2">
 							Login
 						</Link>
-						<Link to="/temasreact/dashboard" className="btn btn-outline-primary me-2">
+						<Link to="/temasreact/dashboard" className="btn btn-outline-warning me-2">
 							Dashboard
 						</Link>
 					</Nav>
