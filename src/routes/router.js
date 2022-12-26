@@ -1,20 +1,27 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import { About } from '../components/About';
-import { Contact } from '../components/Contact';
+import About from '../components/About';
+import Contact from '../components/Contact';
 import Encabezado from '../components/Encabezado';
 import Error404 from '../components/Error404';
-import { Home } from '../components/Home';
+import Home from '../components/Home';
+import MenuZodiaco from '../components/MenuZodiaco';
+import AgregarCaballero from '../pages/AgregarCaballero';
 import Componentes from '../pages/Componentes';
 import Dashboard from '../pages/Dashboard';
+import EditarCaballero from '../pages/EditarCaballero';
 import Estado from '../pages/Estado';
 import Login from '../pages/Login';
 import Producto from '../pages/Producto';
 import Props from '../pages/Props';
+import TablaCaballeros from '../pages/TablaCaballeros';
 import TemasReact from '../pages/TemasReact';
 import Usuario from '../pages/Usuario';
 
 //? Para redireccionar a una página se utiliza el componente '<Navegate to={}>' dentro de 'to' se especifica
 //? la ruta a la cual se desea redireccionar la página
+
+let base1 = '/temasreact';
+let base2 = '/zodiaco';
 
 export const Router = createBrowserRouter([
 	{
@@ -47,7 +54,26 @@ export const Router = createBrowserRouter([
 				element: <Navigate to={'/'} />,
 			},
 			{
-				path: '/temasreact',
+				path: `${base2}`,
+				element: <MenuZodiaco />,
+				errorElement: <Error404 />,
+				children: [
+					{
+						index: true,
+						element: <TablaCaballeros />,
+					},
+					{
+						path: `${base2}/agregar`,
+						element: <AgregarCaballero />,
+					},
+					{
+						path: `${base2}/editar/:id`,
+						element: <EditarCaballero />,
+					},
+				],
+			},
+			{
+				path: `${base1}`,
 				element: <TemasReact />,
 				errorElement: <Error404 />,
 				children: [
@@ -56,19 +82,19 @@ export const Router = createBrowserRouter([
 						element: <Props />,
 					},
 					{
-						path: '/temasreact/estado',
+						path: `${base1}/estado`,
 						element: <Estado />,
 					},
 					{
-						path: '/temasreact/componentes',
+						path: `${base1}/componentes`,
 						element: <Componentes />,
 					},
 					{
-						path: '/temasreact/login',
+						path: `${base1}/login`,
 						element: <Login />,
 					},
 					{
-						path: '/temasreact/dashboard',
+						path: `${base1}/dashboard`,
 						element: <Dashboard />,
 					},
 				],

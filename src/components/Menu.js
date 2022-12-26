@@ -34,6 +34,9 @@ const Menu = () => {
 						<NavLink to="/temasreact" className="btn btn-outline-primary me-2">
 							Temas React
 						</NavLink>
+						<NavLink to="/zodiaco" className="btn btn-outline-primary me-2">
+							Zodiaco
+						</NavLink>
 					</Nav>
 				</Container>
 			</Navbar>

@@ -1,0 +1,19 @@
+import React from 'react';
+
+const Message = ({ msg, bgColor }) => {
+	let style = {
+		padding: '1rem',
+		marginButton: '1rem',
+		textAlign: 'center',
+		color: '#fff',
+		fontWeight: 'bold',
+		backgroundColor: bgColor,
+	};
+	return (
+		<div style={style}>
+			<p>{msg}</p>
+		</div>
+	);
+};
+
+export default Message;

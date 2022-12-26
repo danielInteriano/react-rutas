@@ -11,7 +11,6 @@ const TemasReact = () => {
 			<hr />
 			<Navbar bg="dark" variant="dark" expand="lg">
 				<Container>
-					<Navbar.Brand className="btn btn-outline-warning me-2">Topics</Navbar.Brand>
 					<Nav className="me-auto">
 						<Link to="/temasreact" className="btn btn-outline-warning me-2">
 							Props
