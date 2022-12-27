@@ -43,11 +43,16 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
 	const handleReset = (e) => {
 		setForm(initialForm);
 		setDataToEdit(null);
-		navigate('/zodiaco');
+		navigate('/');
 	};
 
 	return (
 		<div>
+			<h3 className="mt-3 mb-3">
+				{dataToEdit ? 'Editar un Caballero del Zodiaco' : 'Agregar un Caballedo del Zodiaco'}
+			</h3>
+			<hr />
+
 			<form onSubmit={handleSubmit}>
 				<input
 					type="text"

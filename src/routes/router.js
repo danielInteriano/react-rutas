@@ -53,25 +53,7 @@ export const Router = createBrowserRouter([
 				path: '/redirecciona',
 				element: <Navigate to={'/'} />,
 			},
-			{
-				path: `${base2}`,
-				element: <MenuZodiaco />,
-				errorElement: <Error404 />,
-				children: [
-					{
-						index: true,
-						element: <TablaCaballeros />,
-					},
-					{
-						path: `${base2}/agregar`,
-						element: <AgregarCaballero />,
-					},
-					{
-						path: `${base2}/editar/:id`,
-						element: <EditarCaballero />,
-					},
-				],
-			},
+
 			{
 				path: `${base1}`,
 				element: <TemasReact />,
@@ -96,6 +78,25 @@ export const Router = createBrowserRouter([
 					{
 						path: `${base1}/dashboard`,
 						element: <Dashboard />,
+					},
+				],
+			},
+			{
+				path: `${base2}`,
+				element: <MenuZodiaco />,
+				errorElement: <Error404 />,
+				children: [
+					{
+						index: true,
+						element: <TablaCaballeros />,
+					},
+					{
+						path: `${base2}/agregar`,
+						element: <AgregarCaballero />,
+					},
+					{
+						path: `${base2}/editar/:id`,
+						element: <EditarCaballero />,
 					},
 				],
 			},

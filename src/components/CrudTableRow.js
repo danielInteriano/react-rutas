@@ -7,11 +7,9 @@ const CrudTableRow = ({ el, setDataToEdit, deleteData }) => {
 
 	const handleEdit = () => {
 		setDataToEdit(el);
-		console.log(el);
-		let base = '/zodiaco/editar/';
-
-		navigate(`${base}${id}`);
+		navigate(`/editar/${id}`);
 	};
+
 	return (
 		<tr>
 			<td>{name}</td>

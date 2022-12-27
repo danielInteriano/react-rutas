@@ -19,13 +19,44 @@ const TablaCaballeros = () => {
 			if (!res.err) {
 				setDb(res);
 				setError(null);
+				//console.log(res);
 			} else {
 				setDb(null);
 				setError(res);
 			}
 			setLoading(false);
 		});
-	}, [url]);
+	}, []);
+
+	const createData = (data) => {
+		data.id = Date.now();
+
+		let options = { body: data, headers: { 'content-type': 'application/json' } };
+
+		api.post(url, options).then((res) => {
+			console.log(res);
+			if (!res.err) {
+				setDb([...db, res]);
+			} else {
+				setError(res);
+			}
+		});
+	};
+
+	const updateData = (data) => {
+		let endpoint = `${url}/${data.id}`;
+
+		let options = { body: data, headers: { 'content-type': 'application/json' } };
+
+		api.put(endpoint, options).then((res) => {
+			if (!res.err) {
+				let newData = db.map((el) => (el.id === data.id ? data : el));
+				setDb(newData);
+			} else {
+				setError(res);
+			}
+		});
+	};
 
 	const deleteData = (id) => {
 		let isDelete = window.confirm(`¿Estas seguro de eliminar el registro con el id '${id}'?`);
@@ -48,16 +79,18 @@ const TablaCaballeros = () => {
 	};
 
 	return (
-		<div className="space-foot">
-			<h3 className="margen-superior">Caballeros del Zodiaco</h3>
+		<div>
+			<h2 className="margen-superior ">Caballeros del Zodiaco</h2>
 			<hr />
-			{loading && <Loader></Loader>}
-			{error && (
-				<Message msg={`Error ${error.status}:${error.statusText}`} bgColor="#dc3545"></Message>
-			)}
-			{db && (
-				<CrudTable data={db} setDataToEdit={setDataToEdit} deleteData={deleteData}></CrudTable>
-			)}
+			<article className="grid-1-2">
+				{loading && <Loader></Loader>}
+				{error && (
+					<Message msg={`Error ${error.status}:${error.statusText}`} bgColor="#dc3545"></Message>
+				)}
+				{db && (
+					<CrudTable data={db} setDataToEdit={setDataToEdit} deleteData={deleteData}></CrudTable>
+				)}
+			</article>
 		</div>
 	);
 };

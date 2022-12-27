@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import CrudForm from '../components/CrudForm';
+import Loader from '../components/Loader';
+import Message from '../components/Message';
 import { helpHttp } from '../helpers/helpHttp';
 
 const EditarCaballero = () => {
@@ -58,7 +60,9 @@ const EditarCaballero = () => {
 
 	return (
 		<div className="space-foot">
-			<h3 className="margen-superior">Editar un Caballero del Zodiaco</h3>
+			<h3 className="margen-superior">
+				{dataToEdit ? 'Agregar un Caballero del Zodiaco' : 'Editar un Caballero del Zodiaco'}
+			</h3>
 			<hr />
 			<CrudForm
 				createData={createData}
@@ -66,6 +70,10 @@ const EditarCaballero = () => {
 				dataToEdit={dataToEdit}
 				setDataToEdit={setDataToEdit}
 			></CrudForm>
+			{loading && <Loader></Loader>}
+			{error && (
+				<Message msg={`Error ${error.status}:${error.statusText}`} bgColor="#dc3545"></Message>
+			)}
 		</div>
 	);
 };

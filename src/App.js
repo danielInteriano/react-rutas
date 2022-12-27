@@ -1,14 +1,31 @@
+import { Container } from 'react-bootstrap';
 import './App.css';
+import CrudApiRutas from './components/CrudApiRutas';
 
 function App() {
 	return (
-		<div>
-			<h1>Conceptos Básicos</h1>
+		<Container>
+			<h1>CRUD API CON RUTAS</h1>
 			<a href="https://reactrouter.com/en/6.5.0" target="_blank" rel="noreferrer">
 				Documentación React
 			</a>
 			<hr />
-		</div>
+			<CrudApiRutas />
+
+			{/*En este ejercicios se hicieron otro tipo de ejercicios relacionados con el manejo de rutas.
+				Se trabajo con menus, y con un componente router donde se definieron las rutas utilizadas.
+				El propósito fue trabajar con el componente Outlet y varias enrutadores anidados. Para poder
+				ver todos los ejericcios en el archivo index.js se debe hacer la siguiente
+				modificación:
+
+				 const root = ReactDOM.createRoot(document.getElementById('root')); 
+					root.render(
+						<React.StrictMode>
+							<RouterProvider router={Router}/>
+						</React.StrictMode>
+					); 
+			*/}
+		</Container>
 	);
 }
 

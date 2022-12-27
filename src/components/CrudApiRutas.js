@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link, Route, Routes } from 'react-router-dom';
 import { helpHttp } from '../helpers/helpHttp';
 import CrudForm from './CrudForm';
 import CrudTable from './CrudTable';
+import Error404 from './Error404';
 import Loader from './Loader';
 import Message from './Message';
 
-const CrudApiJsonServer = () => {
+const CrudApiRutas = () => {
 	const [db, setDb] = useState(null);
 	const [dataToEdit, setDataToEdit] = useState(null);
 	const [error, setError] = useState(null);
@@ -20,13 +23,14 @@ const CrudApiJsonServer = () => {
 			if (!res.err) {
 				setDb(res);
 				setError(null);
+				//console.log(res);
 			} else {
 				setDb(null);
 				setError(res);
 			}
 			setLoading(false);
 		});
-	}, [url]);
+	}, []);
 
 	const createData = (data) => {
 		data.id = Date.now();
@@ -80,24 +84,65 @@ const CrudApiJsonServer = () => {
 
 	return (
 		<div>
-			<h2>CRUD APP con API JSON-SERVER</h2>
-			<article className="grid-1-2">
-				<CrudForm
-					createData={createData}
-					updateData={updateData}
-					dataToEdit={dataToEdit}
-					setDataToEdit={setDataToEdit}
-				></CrudForm>
-				{loading && <Loader></Loader>}
-				{error && (
-					<Message msg={`Error ${error.status}:${error.statusText}`} bgColor="#dc3545"></Message>
-				)}
-				{db && (
-					<CrudTable data={db} setDataToEdit={setDataToEdit} deleteData={deleteData}></CrudTable>
-				)}
-			</article>
+			<Navbar bg="dark" variant="dark" expand="lg">
+				<Container>
+					<Nav className="me-auto">
+						<Link to="/" className="btn btn-outline-light me-2">
+							Caballeros Home
+						</Link>
+						<Link to="/agregar" className="btn btn-outline-light me-2">
+							Agregar
+						</Link>
+					</Nav>
+				</Container>
+			</Navbar>
+
+			<Routes>
+				<Route
+					exact
+					path="/"
+					element={
+						<>
+							{loading && <Loader />},
+							{error && (
+								<Message msg={`Error ${error.status}: ${error.statusText}`} bgColor="#dc3545" />
+							)}
+							{db && <CrudTable data={db} setDataToEdit={setDataToEdit} deleteData={deleteData} />}
+						</>
+					}
+					errorElement={<Error404 />}
+				></Route>
+
+				<Route
+					exact
+					path="/agregar"
+					element={
+						<CrudForm
+							createData={createData}
+							updateData={updateData}
+							dataToEdit={dataToEdit}
+							setDataToEdit={setDataToEdit}
+						></CrudForm>
+					}
+					errorElement={<Error404 />}
+				></Route>
+
+				<Route
+					exact
+					path="/editar/:id"
+					element={
+						<CrudForm
+							createData={createData}
+							updateData={updateData}
+							dataToEdit={dataToEdit}
+							setDataToEdit={setDataToEdit}
+						></CrudForm>
+					}
+					errorElement={<Error404 />}
+				></Route>
+			</Routes>
 		</div>
 	);
 };
 
-export default CrudApiJsonServer;
+export default CrudApiRutas;
