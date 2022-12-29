@@ -1,16 +1,16 @@
 import { Container } from 'react-bootstrap';
 import './App.css';
-import CrudApiRutas from './components/CrudApiRutas';
+import MovieSearch from './components/MovieSearch';
 
 function App() {
 	return (
 		<Container>
-			<h1>CRUD API CON RUTAS</h1>
+			{/* <h1>CRUD API CON RUTAS</h1>
 			<a href="https://reactrouter.com/en/6.5.0" target="_blank" rel="noreferrer">
 				Documentación React
 			</a>
 			<hr />
-			<CrudApiRutas />
+			<CrudApiRutas /> */}
 
 			{/*En este ejercicios se hicieron otro tipo de ejercicios relacionados con el manejo de rutas.
 				Se trabajo con menus, y con un componente router donde se definieron las rutas utilizadas.
@@ -25,6 +25,9 @@ function App() {
 						</React.StrictMode>
 					); 
 			*/}
+			{/*En el ejercicio que se muestra a continuación se hizo una App que busca peliculas y las guarda
+			 como favoritas en localStorage si así lo desea el cliente*/}
+			<MovieSearch />
 		</Container>
 	);
 }
