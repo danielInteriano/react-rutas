@@ -20,7 +20,6 @@ input[type='text'] {
 }
 
 button,
-input[type='submit'],
 input[type='reset'] {
 	border: thin solid rgb(207, 197, 197);
 	border-radius: 0.25rem;
@@ -37,10 +36,6 @@ input[type='reset'] {
 	text-align: center;
 	vertical-align: middle;
 	cursor: pointer;
-}
-
-button:hover {
-	background-color: black;
 }
 
 inp form {
@@ -75,4 +70,3 @@ a {
 .space-foot {
 	margin-bottom: 4rem;
 }
-

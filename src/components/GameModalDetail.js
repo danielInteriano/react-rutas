@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MovieModalDetail = () => {
+const GameModalDetail = () => {
 	return (
 		<div>
 			<h2>Modal de Detalle de la Película</h2>
@@ -8,4 +8,4 @@ const MovieModalDetail = () => {
 	);
 };
 
-export default MovieModalDetail;
+export default GameModalDetail;

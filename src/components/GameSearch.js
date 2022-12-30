@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
+import GameDetail from './GameDetail';
+import GameForm from './GameForm';
 import Loader from './Loader';
-import MovieDetail from './MovieDetail';
-import MovieForm from './MovieForm';
 
-const MovieSearch = () => {
+const GameSearch = () => {
 	const [search, setSearch] = useState(null);
 	const [data, setData] = useState(null);
-	const [movie, setMovie] = useState(null);
+	const [game, setGame] = useState(null);
 	const [loading, setLoading] = useState(false);
 
 	//?función para manejar la información del formulario de búsqueda o filtrado
@@ -15,13 +15,13 @@ const MovieSearch = () => {
 	};
 
 	return (
-		<div className="mt-4">
-			<h2>MovieSearch</h2>
+		<div className="row mt-4">
+			<h2>GameSearch</h2>
 			{loading && <Loader />}
-			<MovieForm handleSearch={handleSearch} />
-			<MovieDetail search={search} data={data} />
+			<GameForm handleSearch={handleSearch} />
+			<GameDetail search={search} data={data} />
 		</div>
 	);
 };
 
-export default MovieSearch;
+export default GameSearch;

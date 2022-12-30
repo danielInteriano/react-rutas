@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MovieCard = () => {
+const GameCard = () => {
 	return (
 		<div className="col-12 col-md-4 col-lg-3 col-xl-2">
 			<h5>Cards de cada Palícula filtrada</h5>
@@ -8,4 +8,4 @@ const MovieCard = () => {
 	);
 };
 
-export default MovieCard;
+export default GameCard;

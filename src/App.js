@@ -1,6 +1,6 @@
 import { Container } from 'react-bootstrap';
 import './App.css';
-import MovieSearch from './components/MovieSearch';
+import GameSearch from './components/GameSearch';
 
 function App() {
 	return (
@@ -27,7 +27,7 @@ function App() {
 			*/}
 			{/*En el ejercicio que se muestra a continuación se hizo una App que busca peliculas y las guarda
 			 como favoritas en localStorage si así lo desea el cliente*/}
-			<MovieSearch />
+			<GameSearch />
 		</Container>
 	);
 }
