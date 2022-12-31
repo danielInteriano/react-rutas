@@ -73,8 +73,13 @@ const GameForm = ({ handleSearch }) => {
 			setAlerta(true);
 			return;
 		}
+
+		//console.log(form);
+		handleSearch(form);
+		setForm(initialForm);
 	};
 
+	console.log(form.value);
 	return (
 		<div className="col-md-6 col-12">
 			<h2>Buscador de Películas</h2>
@@ -90,7 +95,7 @@ const GameForm = ({ handleSearch }) => {
 					onChange={handleChange}
 					value={form.plataforma}
 				>
-					<option>--Plataforma--</option>
+					<option>Seleccione</option>
 					{platform.map((el, index) => (
 						<option key={'platform' + index} value={el.nombre}>
 							{el.nombre}
@@ -107,7 +112,7 @@ const GameForm = ({ handleSearch }) => {
 					onChange={handleChange}
 					value={form.categoria}
 				>
-					<option>--Categoría--</option>
+					<option>Seleccione</option>
 					{category.map((el, index) => (
 						<option key={'category' + index} value={el.name}>
 							{el.name}
@@ -120,7 +125,8 @@ const GameForm = ({ handleSearch }) => {
 					<Alerta
 						setAlerta={setAlerta}
 						mensaje={'Cuidado'}
-						descripcion={'Hay datos que debes completar'}
+						descripcion={'Hay datos que debes seleccionar.'}
+						tipo={'warning'}
 					/>
 				)}
 			</form>

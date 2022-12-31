@@ -30,7 +30,7 @@ const CrudApiRutas = () => {
 			}
 			setLoading(false);
 		});
-	}, []);
+	}, [url, api]);
 
 	const createData = (data) => {
 		data.id = Date.now();
