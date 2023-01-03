@@ -31,7 +31,7 @@ const GameSearch = () => {
 
 			api.get(urlGame, options).then((res) => {
 				if (!res.err) {
-					//console.log(res);
+					console.log(res);
 					setData(res);
 				} else {
 					setData(null);
