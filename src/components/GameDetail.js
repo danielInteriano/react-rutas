@@ -18,18 +18,21 @@ const GameDetail = ({ search, data }) => {
 						tipo={'danger'}
 					/>
 				) : (
-					games.map((game) => (
-						<GameCard
-							key={game.id}
-							id={game.id}
-							thumbnail={game.thumbnail}
-							title={game.title}
-							developer={game.developer}
-							short_description={game.short_description}
-							genre={game.genre}
-							publisher={game.publisher}
-						/>
-					))
+					games.map(
+						(game) =>
+							categoria === game.genre && (
+								<GameCard
+									key={game.id}
+									id={game.id}
+									thumbnail={game.thumbnail}
+									title={game.title}
+									developer={game.developer}
+									short_description={game.short_description}
+									genre={game.genre}
+									publisher={game.publisher}
+								/>
+							)
+					)
 				)}
 			</div>
 		</div>

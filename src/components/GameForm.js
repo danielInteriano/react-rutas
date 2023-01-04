@@ -13,51 +13,16 @@ const GameForm = ({ handleSearch }) => {
 
 	let platform = [{ nombre: 'pc' }, { nombre: 'browser' }];
 	let category = [
-		{ name: 'mmorpg' },
-		{ name: 'shooter' },
-		{ name: 'strategy' },
-		{ name: 'moba' },
-		{ name: 'racing' },
-		{ name: 'sports' },
-		{ name: 'social' },
-		{ name: 'sandbox' },
-		{ name: 'open-world' },
-		{ name: 'survival' },
-		{ name: 'pvp' },
-		{ name: 'pve' },
-		{ name: 'pixel' },
-		{ name: 'voxel' },
-		{ name: 'zombie' },
-		{ name: 'turn-based' },
-		{ name: 'first-person' },
-		{ name: 'third-person' },
-		{ name: 'top-down' },
-		{ name: 'tank' },
-		{ name: 'space' },
-		{ name: 'sailing' },
-		{ name: 'side-scroller' },
-		{ name: 'superhero' },
-		{ name: 'permadeath' },
-		{ name: 'card' },
-		{ name: 'battle-royale' },
-		{ name: 'mmo' },
-		{ name: 'mmofps' },
-		{ name: 'mmotps' },
-		{ name: '3d' },
-		{ name: '2d' },
-		{ name: 'anime' },
-		{ name: 'fantasy' },
-		{ name: 'sci-fi' },
-		{ name: 'fighting' },
-		{ name: 'action-rpg' },
-		{ name: 'action' },
-		{ name: 'military' },
-		{ name: 'martial-arts' },
-		{ name: 'flight' },
-		{ name: 'low-spec' },
-		{ name: 'tower-defense' },
-		{ name: 'horror' },
-		{ name: 'mmorts' },
+		{ name: 'MMO' },
+		{ name: 'MMORPG' },
+		{ name: 'Shooter' },
+		{ name: 'Strategy' },
+		{ name: 'MOBA' },
+		{ name: 'Card-Games' },
+		{ name: 'Racing' },
+		{ name: 'Sports' },
+		{ name: 'Social' },
+		{ name: 'Fighting' },
 	];
 
 	//? función que maneja el cambio de los select
@@ -74,9 +39,9 @@ const GameForm = ({ handleSearch }) => {
 			return;
 		}
 
-		//console.log(form);
+		//console.log({ form });
 		handleSearch(form);
-		setForm(initialForm);
+		//setForm(initialForm);
 	};
 
 	console.log(form.value);
@@ -103,7 +68,7 @@ const GameForm = ({ handleSearch }) => {
 					))}
 				</select>
 				<label className="mx-2" name="categoria">
-					Categoría
+					Género
 				</label>
 				<select
 					id="select-category"
